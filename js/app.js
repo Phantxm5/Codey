@@ -54,9 +54,9 @@ function showWelcomeMessage() {
     const welcomeSection = document.createElement('div');
     welcomeSection.className = 'welcome-section';
     welcomeSection.innerHTML = `
-        <h2>Welcome to CodeLingo!</h2>
+        <h2>Welcome to Codey!</h2>
         <div class="welcome-content">
-            <p>CodeLingo is an interactive platform designed to help you learn programming languages through a structured, engaging approach.</p>
+            <p>Codey is an interactive platform designed to help you learn programming languages through a structured, engaging approach.</p>
             <p>Here's how to get started:</p>
             <ol>
                 <li>Click "Add New Language" to choose a programming language to learn</li>

@@ -1,8 +1,8 @@
-# CodeLingo Website Structure and UI Design
+# Codey Website Structure and UI Design
 
 ## Overall Layout
 
-The CodeLingo application will follow a modern, minimalist design with a responsive layout that works well on both desktop and mobile devices. The layout will include:
+The Codey application will follow a modern, minimalist design with a responsive layout that works well on both desktop and mobile devices. The layout will include:
 
 1. **Header** - Contains the logo, navigation links, and theme toggle
 2. **Main Content Area** - Changes based on the current screen (home, language selection, learning, levels, profile)
@@ -49,7 +49,7 @@ The CodeLingo application will follow a modern, minimalist design with a respons
 |  [+ Add New Language]                    |
 |                                          |
 +------------------------------------------+
-|  © 2025 CodeLingo                        |
+|  © 2025 Codey                        |
 +------------------------------------------+
 ```
 
@@ -82,7 +82,7 @@ The CodeLingo application will follow a modern, minimalist design with a respons
 |  [< Back]                                |
 |                                          |
 +------------------------------------------+
-|  © 2025 CodeLingo                        |
+|  © 2025 Codey                        |
 +------------------------------------------+
 ```
 
@@ -129,7 +129,7 @@ The CodeLingo application will follow a modern, minimalist design with a respons
 |  [< Back to Home]                        |
 |                                          |
 +------------------------------------------+
-|  © 2025 CodeLingo                        |
+|  © 2025 Codey                        |
 +------------------------------------------+
 ```
 
@@ -156,7 +156,7 @@ The CodeLingo application will follow a modern, minimalist design with a respons
 |  [< Back to Levels]       [Complete >]   |
 |                                          |
 +------------------------------------------+
-|  © 2025 CodeLingo                        |
+|  © 2025 Codey                        |
 +------------------------------------------+
 ```
 
@@ -199,7 +199,7 @@ The CodeLingo application will follow a modern, minimalist design with a respons
 |  [< Back to Levels]       [Complete >]   |
 |                                          |
 +------------------------------------------+
-|  © 2025 CodeLingo                        |
+|  © 2025 Codey                        |
 +------------------------------------------+
 ```
 
@@ -232,7 +232,7 @@ The CodeLingo application will follow a modern, minimalist design with a respons
 |  [Logout]                                |
 |                                          |
 +------------------------------------------+
-|  © 2025 CodeLingo                        |
+|  © 2025 Codey                        |
 +------------------------------------------+
 ```
 
@@ -257,7 +257,7 @@ The CodeLingo application will follow a modern, minimalist design with a respons
 |  +--------------------------------------+|
 |                                          |
 +------------------------------------------+
-|  © 2025 CodeLingo                        |
+|  © 2025 Codey                        |
 +------------------------------------------+
 ```
 

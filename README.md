@@ -1,7 +1,7 @@
-# CodeLingo - Interactive Programming Learning Platform
+# Codey - Interactive Programming Learning Platform
 
 ## Project Overview
-CodeLingo is an interactive web application designed to help users learn programming languages through a structured, gamified approach similar to language learning platforms like Duolingo. The application offers multiple programming languages, a comprehensive level system, and interactive coding challenges.
+Codey is an interactive web application designed to help users learn programming languages through a structured, gamified approach similar to language learning platforms like Duolingo. The application offers multiple programming languages, a comprehensive level system, and interactive coding challenges.
 
 ## Live Demo
 The application is deployed and accessible at: https://zgbrpvgj.manus.space
