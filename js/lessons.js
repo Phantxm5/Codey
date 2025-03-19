@@ -832,3 +832,73 @@ class MasterChallenge {
     
     return null;
 }
+
+// Add this function to the end of the file
+
+// Save user progress after completing a lesson or level
+function saveUserProgress(language, level, lesson, xpEarned = 10) {
+    if (!currentUser || currentUser.id === 'guest') {
+        console.log('Progress not saved: User is not logged in or is a guest.');
+        return false;
+    }
+    
+    if (!currentUser.progressSaved) {
+        console.log('Progress not saved: Progress saving is disabled for this user.');
+        return false;
+    }
+    
+    // Find the language in user's languages
+    const userLanguage = currentUser.languages.find(l => l.id === language.id);
+    if (!userLanguage) {
+        console.log('Progress not saved: Language not found in user\'s languages.');
+        return false;
+    }
+    
+    // Add XP
+    userLanguage.xp = (userLanguage.xp || 0) + xpEarned;
+    
+    // Mark lesson as completed if not already
+    if (!userLanguage.completedLessons) {
+        userLanguage.completedLessons = [];
+    }
+    
+    const lessonKey = `${level}-${lesson}`;
+    if (!userLanguage.completedLessons.includes(lessonKey)) {
+        userLanguage.completedLessons.push(lessonKey);
+    }
+    
+    // Update level if all lessons in current level are completed
+    const levelLessons = getLessonsForLevel(language.id, level);
+    const allLessonsCompleted = levelLessons.every(l => 
+        userLanguage.completedLessons.includes(`${level}-${l.id}`)
+    );
+    
+    if (allLessonsCompleted && userLanguage.level === level) {
+        userLanguage.level = level + 1;
+        
+        // Add bonus XP for completing a level
+        userLanguage.xp += 50;
+    }
+    
+    // Calculate progress percentage (based on completed lessons)
+    const totalLessons = 30 * 3; // Assuming 3 lessons per level, 30 levels
+    const completedLessons = userLanguage.completedLessons.length;
+    userLanguage.progress = Math.min(100, Math.floor((completedLessons / totalLessons) * 100));
+    
+    // Update user in local storage
+    updateCurrentUser();
+    
+    console.log(`Progress saved: ${xpEarned} XP earned, total: ${userLanguage.xp} XP, level: ${userLanguage.level}, progress: ${userLanguage.progress}%`);
+    return true;
+}
+
+// Function to get lessons for a specific level (placeholder - would need to be implemented)
+function getLessonsForLevel(languageId, level) {
+    // This would normally fetch lessons from a data source
+    // For now, return a placeholder array of 3 lessons per level
+    return [
+        { id: 1, title: `Lesson ${level}.1` },
+        { id: 2, title: `Lesson ${level}.2` },
+        { id: 3, title: `Lesson ${level}.3` }
+    ];
+}

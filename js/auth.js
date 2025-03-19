@@ -61,6 +61,21 @@ function handleLogin() {
     const user = users.find(u => u.username === username && u.password === password);
     
     if (user) {
+        // Update last login time
+        user.lastLogin = new Date().toISOString();
+        
+        // Ensure progress saved flag exists
+        if (user.progressSaved === undefined) {
+            user.progressSaved = true;
+        }
+        
+        // Update user in users array
+        const userIndex = users.findIndex(u => u.id === user.id);
+        if (userIndex !== -1) {
+            users[userIndex] = user;
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+        
         // Set current user
         localStorage.setItem('currentUser', JSON.stringify(user));
         currentUser = user;
@@ -68,6 +83,8 @@ function handleLogin() {
         // Redirect to home screen
         showScreen('home-screen');
         loadUserLanguages();
+        
+        console.log('User logged in successfully. Progress saving is enabled.');
     } else {
         alert('Invalid username or password.');
     }
@@ -76,16 +93,28 @@ function handleLogin() {
 // Handle register form submission
 function handleRegister() {
     const username = document.getElementById('register-username').value.trim();
+    const email = document.getElementById('register-email').value.trim();
     const password = document.getElementById('register-password').value;
     const confirmPassword = document.getElementById('register-confirm-password').value;
+    const termsAgreed = document.getElementById('register-terms').checked;
     
     if (!username || !password || !confirmPassword) {
-        alert('Please fill in all fields.');
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    if (password.length < 6) {
+        alert('Password must be at least 6 characters long.');
         return;
     }
     
     if (password !== confirmPassword) {
         alert('Passwords do not match.');
+        return;
+    }
+    
+    if (!termsAgreed) {
+        alert('You must agree to the Terms of Service.');
         return;
     }
     
@@ -100,11 +129,14 @@ function handleRegister() {
     const newUser = {
         id: Date.now().toString(),
         username: username,
+        email: email,
         password: password,
         createdAt: new Date().toISOString(),
         languages: [],
         xp: 0,
-        titles: []
+        titles: [],
+        lastLogin: new Date().toISOString(),
+        progressSaved: true
     };
     
     // Add user to local storage
@@ -118,6 +150,9 @@ function handleRegister() {
     // Redirect to home screen
     showScreen('home-screen');
     loadUserLanguages();
+    
+    // Show welcome message
+    alert('Account created successfully! Welcome to Codey.');
 }
 
 // Logout function

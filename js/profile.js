@@ -13,6 +13,14 @@ function initProfileEventListeners() {
             logout();
         });
     }
+    
+    // Add back to home button functionality
+    const backToHomeBtn = document.getElementById('back-to-home-from-profile-btn');
+    if (backToHomeBtn) {
+        backToHomeBtn.addEventListener('click', function() {
+            showScreen('home-screen');
+        });
+    }
 }
 
 // Load user profile
