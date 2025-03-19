@@ -29,6 +29,9 @@ function checkAuthStatus() {
         currentUser = JSON.parse(userData);
         showScreen('home-screen');
         loadUserLanguages();
+        
+        // Update navigation for logged-in user
+        updateNavigation(false);
     } else {
         // Allow users to browse without an account
         currentUser = {
@@ -40,8 +43,25 @@ function checkAuthStatus() {
             titles: []
         };
         showScreen('home-screen');
+        
+        // Update navigation for guest user
+        updateNavigation(true);
+        
         // Show welcome message for first-time visitors
         showWelcomeMessage();
+    }
+}
+
+// Update navigation based on user status
+function updateNavigation(isGuest) {
+    const profileLink = document.getElementById('profile-link');
+    
+    if (isGuest) {
+        // Change profile link to login/register for guests
+        profileLink.innerHTML = '<i class="fas fa-sign-in-alt"></i> Login/Register';
+    } else {
+        // Show profile link for logged-in users
+        profileLink.innerHTML = '<i class="fas fa-user"></i> Profile';
     }
 }
 
@@ -93,10 +113,17 @@ function initEventListeners() {
         showScreen('home-screen');
     });
     
+    // Profile/Login link - behavior changes based on user status
     document.getElementById('profile-link').addEventListener('click', function(e) {
         e.preventDefault();
-        showScreen('profile-screen');
-        loadUserProfile();
+        if (currentUser && currentUser.id !== 'guest') {
+            // Logged in user - show profile
+            showScreen('profile-screen');
+            loadUserProfile();
+        } else {
+            // Guest user - show login/register screen
+            showScreen('auth-screen');
+        }
     });
     
     // Add language button
@@ -142,9 +169,20 @@ function showScreen(screenId) {
                 titles: []
             };
             showWelcomeMessage();
+            
+            // Update navigation for guest user
+            updateNavigation(true);
         }
     } else if (screenId === 'profile-screen') {
         document.getElementById('profile-link').classList.add('active');
+        
+        // Prevent guests from accessing profile screen
+        if (currentUser && currentUser.id === 'guest') {
+            // Redirect guests to auth screen instead
+            document.getElementById('profile-screen').classList.remove('active');
+            document.getElementById('auth-screen').classList.add('active');
+            return;
+        }
     }
 }
 
