@@ -80,6 +80,9 @@ function handleLogin() {
         localStorage.setItem('currentUser', JSON.stringify(user));
         currentUser = user;
         
+        // Update navigation to show Profile instead of Login/Register
+        updateNavigation(false);
+        
         // Redirect to home screen
         showScreen('home-screen');
         loadUserLanguages();
@@ -96,7 +99,6 @@ function handleRegister() {
     const email = document.getElementById('register-email').value.trim();
     const password = document.getElementById('register-password').value;
     const confirmPassword = document.getElementById('register-confirm-password').value;
-    const termsAgreed = document.getElementById('register-terms').checked;
     
     if (!username || !password || !confirmPassword) {
         alert('Please fill in all required fields.');
@@ -110,11 +112,6 @@ function handleRegister() {
     
     if (password !== confirmPassword) {
         alert('Passwords do not match.');
-        return;
-    }
-    
-    if (!termsAgreed) {
-        alert('You must agree to the Terms of Service.');
         return;
     }
     
@@ -146,6 +143,9 @@ function handleRegister() {
     // Set current user
     localStorage.setItem('currentUser', JSON.stringify(newUser));
     currentUser = newUser;
+    
+    // Update navigation to show Profile instead of Login/Register
+    updateNavigation(false);
     
     // Redirect to home screen
     showScreen('home-screen');
