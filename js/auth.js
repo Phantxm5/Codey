@@ -159,5 +159,12 @@ function handleRegister() {
 function logout() {
     localStorage.removeItem('currentUser');
     currentUser = null;
+    
+    // Force reload user languages to clear previous user data
+    const languagesContainer = document.getElementById('selected-languages');
+    if (languagesContainer) {
+        languagesContainer.innerHTML = '<p>You haven\'t selected any languages yet. Click "Add New Language" to get started.</p>';
+    }
+    
     showScreen('auth-screen');
 }

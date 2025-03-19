@@ -123,8 +123,26 @@ function showScreen(screenId) {
         link.classList.remove('active');
     });
     
+    // Check authentication status when navigating to home screen
     if (screenId === 'home-screen') {
         document.getElementById('home-link').classList.add('active');
+        
+        // Re-check authentication status when navigating to home
+        // This ensures proper handling after logout
+        const userData = localStorage.getItem('currentUser');
+        if (!userData && currentUser && currentUser.id !== 'guest') {
+            // User was logged out but currentUser variable wasn't reset properly
+            // Create a fresh guest user
+            currentUser = {
+                id: 'guest',
+                username: 'Guest',
+                createdAt: new Date().toISOString(),
+                languages: [],
+                xp: 0,
+                titles: []
+            };
+            showWelcomeMessage();
+        }
     } else if (screenId === 'profile-screen') {
         document.getElementById('profile-link').classList.add('active');
     }
