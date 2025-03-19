@@ -43,6 +43,16 @@ function loadUserProfile() {
     }
     document.getElementById('profile-xp').textContent = totalXP;
     
+    // Hide logout button for guest users
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+        if (currentUser.id === 'guest') {
+            logoutBtn.style.display = 'none';
+        } else {
+            logoutBtn.style.display = 'block';
+        }
+    }
+    
     // Load languages
     loadProfileLanguages();
     
