@@ -1,4 +1,5 @@
-// Languages related functionality
+// Modified languages.js to disable all languages except Python
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize languages event listeners
     initLanguagesEventListeners();
@@ -9,37 +10,44 @@ const availableLanguages = [
     {
         id: 'html',
         name: 'HTML',
-        description: 'The standard markup language for creating web pages.'
+        description: 'The standard markup language for creating web pages.',
+        disabled: true
     },
     {
         id: 'css',
         name: 'CSS',
-        description: 'The language used for styling web pages.'
+        description: 'The language used for styling web pages.',
+        disabled: true
     },
     {
         id: 'javascript',
         name: 'JavaScript',
-        description: 'The programming language of the web.'
+        description: 'The programming language of the web.',
+        disabled: true
     },
     {
         id: 'python',
         name: 'Python',
-        description: 'A versatile programming language known for its readability.'
+        description: 'A versatile programming language known for its readability.',
+        disabled: false
     },
     {
         id: 'csharp',
         name: 'C#',
-        description: 'A modern, object-oriented programming language by Microsoft.'
+        description: 'A modern, object-oriented programming language by Microsoft.',
+        disabled: true
     },
     {
         id: 'cpp',
         name: 'C/C++',
-        description: 'Powerful programming languages for system-level development.'
+        description: 'Powerful programming languages for system-level development.',
+        disabled: true
     },
     {
         id: 'setup',
         name: 'Setup Tutorial',
-        description: 'Learn how to set up your coding environment with VS Code and alternatives.'
+        description: 'Learn how to set up your coding environment with VS Code and alternatives.',
+        disabled: true
     }
 ];
 
@@ -67,6 +75,23 @@ function loadAvailableLanguages() {
         languageCard.className = 'language-card';
         languageCard.dataset.language = language.id;
         
+        // Add disabled class and coming soon label if language is disabled
+        if (language.disabled) {
+            languageCard.classList.add('disabled');
+            
+            // Create and add the Coming Soon label
+            const comingSoonLabel = document.createElement('div');
+            comingSoonLabel.className = 'coming-soon-label';
+            comingSoonLabel.textContent = 'Coming Soon';
+            languageCard.appendChild(comingSoonLabel);
+            
+            // Create and add tooltip
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = 'This language will be available soon!';
+            languageCard.appendChild(tooltip);
+        }
+        
         const icon = document.createElement('div');
         icon.className = 'language-icon';
         icon.innerHTML = getLanguageIcon(language.id);
@@ -81,18 +106,52 @@ function loadAvailableLanguages() {
         languageCard.appendChild(name);
         languageCard.appendChild(description);
         
-        // Add event listener to select language
-        languageCard.addEventListener('click', function() {
-            selectLanguage(language);
-        });
+        // Add event listener to select language only if not disabled
+        if (!language.disabled) {
+            languageCard.addEventListener('click', function() {
+                selectLanguage(language);
+            });
+        } else {
+            // For disabled languages, add a click event that shows a message
+            languageCard.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                alert(`${language.name} will be available soon!`);
+            });
+        }
         
         languagesContainer.appendChild(languageCard);
+    });
+    
+    // Force immediate application of styles
+    document.querySelectorAll('.language-card.disabled').forEach(card => {
+        card.style.position = 'relative';
+        card.style.opacity = '0.7';
+        card.style.cursor = 'not-allowed';
+        card.style.overflow = 'hidden';
+        
+        // Make sure Coming Soon label is visible with inline styles
+        const label = card.querySelector('.coming-soon-label');
+        if (label) {
+            label.style.position = 'absolute';
+            label.style.top = '10px';
+            label.style.right = '10px';
+            label.style.backgroundColor = '#ff3b30';
+            label.style.color = 'white';
+            label.style.padding = '5px 10px';
+            label.style.borderRadius = '4px';
+            label.style.fontWeight = 'bold';
+            label.style.fontSize = '0.8rem';
+            label.style.zIndex = '2';
+            label.style.transform = 'rotate(5deg)';
+            label.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
+        }
     });
 }
 
 // Select a language to learn
 function selectLanguage(language) {
-    if (!currentUser) return;
+    if (!currentUser || language.disabled) return;
     
     // Add language to user's languages if not already added
     if (!currentUser.languages) {

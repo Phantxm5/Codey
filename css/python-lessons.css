@@ -1,0 +1,265 @@
+/* Python Sublevels Enhanced Styling */
+
+/* Main container for Python lessons */
+.python-lesson-container {
+    background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-left: 5px solid #4b8bbe;
+    position: relative;
+    overflow: hidden;
+}
+
+.python-lesson-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png');
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: top right;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+/* Lesson headers */
+.python-lesson-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(75, 139, 190, 0.3);
+    padding-bottom: 15px;
+}
+
+.python-lesson-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffd43b;
+    margin-right: 15px;
+    font-family: 'Consolas', monospace;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.python-lesson-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #4b8bbe;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Content sections */
+.python-content-section {
+    background: rgba(22, 27, 34, 0.7);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 3px solid #ffd43b;
+}
+
+.python-content-section h4 {
+    color: #ffd43b;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.python-content-section h4::before {
+    content: "🐍";
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.python-content-section p {
+    color: #e6e6e6;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Code examples */
+.python-code-example {
+    background: #282c34;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.python-code-example::before {
+    content: "Python";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #4b8bbe;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-bottom-left-radius: 8px;
+}
+
+.python-code-example pre {
+    margin: 0;
+    padding: 10px 0 0 0;
+    overflow-x: auto;
+}
+
+.python-code-example code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Interactive elements */
+.python-interactive {
+    background: rgba(75, 139, 190, 0.1);
+    border: 1px solid rgba(75, 139, 190, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 25px 0;
+    position: relative;
+}
+
+.python-interactive::before {
+    content: "Try it yourself";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    background: #ffd43b;
+    color: #000;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Tips and notes */
+.python-tip {
+    background: rgba(255, 212, 59, 0.1);
+    border-left: 4px solid #ffd43b;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.python-tip h5 {
+    color: #ffd43b;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.python-tip h5::before {
+    content: "💡";
+    margin-right: 10px;
+}
+
+.python-note {
+    background: rgba(75, 139, 190, 0.1);
+    border-left: 4px solid #4b8bbe;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.python-note h5 {
+    color: #4b8bbe;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.python-note h5::before {
+    content: "ℹ️";
+    margin-right: 10px;
+}
+
+/* Visual aids */
+.python-visual-aid {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.python-visual-aid img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.python-visual-aid .caption {
+    font-style: italic;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Comparison tables */
+.python-comparison {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.python-comparison th {
+    background: #4b8bbe;
+    color: white;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+.python-comparison td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(75, 139, 190, 0.2);
+}
+
+.python-comparison tr:nth-child(even) {
+    background: rgba(75, 139, 190, 0.05);
+}
+
+.python-comparison tr:last-child td {
+    border-bottom: none;
+}
+
+/* Animations */
+@keyframes highlight {
+    0% { background-color: rgba(255, 212, 59, 0.2); }
+    100% { background-color: transparent; }
+}
+
+.python-highlight {
+    animation: highlight 2s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .python-lesson-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .python-lesson-number {
+        margin-bottom: 10px;
+    }
+    
+    .python-code-example pre {
+        font-size: 0.9rem;
+    }
+}
