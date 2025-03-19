@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLingo - Learn Programming Languages</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/components.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1 id="logo-home-link">CodeLingo</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="home-link" class="active">Home</a></li>
+                    <li><a href="#" id="profile-link">Profile</a></li>
+                </ul>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Home Screen -->
+            <section id="home-screen" class="screen active">
+                <div class="home-hero">
+                    <h2>Welcome to CodeLingo</h2>
+                    <p class="home-intro">Learn programming languages through an interactive, structured approach designed for beginners and experienced developers alike.</p>
+                    <div class="home-features">
+                        <div class="feature-card">
+                            <i class="fas fa-code"></i>
+                            <h3>Multiple Languages</h3>
+                            <p>Learn HTML, CSS, JavaScript, Python, C/C++, and C# at your own pace</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-layer-group"></i>
+                            <h3>Structured Learning</h3>
+                            <p>Progress through beginner, advanced, and master levels with guided lessons</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Coding Challenges</h3>
+                            <p>Test your skills with interactive coding challenges at milestone levels</p>
+                        </div>
+                    </div>
+                </div>
+                <h2>Your Languages</h2>
+                <div id="selected-languages" class="language-grid">
+                    <!-- Selected languages will be displayed here -->
+                </div>
+                <button id="add-language-btn" class="btn primary-btn">
+                    <i class="fas fa-plus"></i> Add New Language
+                </button>
+            </section>
+
+            <!-- Language Selection Screen -->
+            <section id="language-selection-screen" class="screen">
+                <h2>Choose a Language</h2>
+                <div id="available-languages" class="language-grid">
+                    <!-- Available languages will be displayed here -->
+                </div>
+                <button id="back-to-home-btn" class="btn secondary-btn">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+            </section>
+
+            <!-- Learning Screen -->
+            <section id="learning-screen" class="screen">
+                <div class="learning-header">
+                    <h2 id="current-language">Language</h2>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div id="xp-progress" class="progress"></div>
+                        </div>
+                        <div class="progress-info">
+                            <span id="current-xp">0</span> XP
+                            <span>Level <span id="current-level">1</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="lesson-content" class="lesson-container">
+                    <!-- Lesson content will be displayed here -->
+                </div>
+                
+                <div id="coding-challenge" class="coding-challenge-container">
+                    <h3>Coding Challenge</h3>
+                    <div class="challenge-description">
+                        <!-- Challenge description will be displayed here -->
+                    </div>
+                    <div class="code-editor-container">
+                        <textarea id="code-editor" class="code-editor"></textarea>
+                    </div>
+                    <button id="run-code-btn" class="btn primary-btn">Run Code</button>
+                    <div id="code-output" class="code-output">
+                        <!-- Code output will be displayed here -->
+                    </div>
+                </div>
+                
+                <div class="lesson-navigation">
+                    <button id="back-to-levels-btn" class="btn secondary-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Levels
+                    </button>
+                    <button id="complete-lesson-btn" class="btn primary-btn">
+                        Complete <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Levels Screen -->
+            <section id="levels-screen" class="screen">
+                <div class="levels-header">
+                    <h2 id="levels-language">Language</h2>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div id="levels-xp-progress" class="progress"></div>
+                        </div>
+                        <div class="progress-info">
+                            <span id="levels-current-xp">0</span> XP
+                            <span>Level <span id="levels-current-level">1</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="levels-container">
+                    <div class="level-category">
+                        <h3>Beginner Levels (1-10)</h3>
+                        <div id="beginner-levels" class="level-grid">
+                            <!-- Beginner levels will be displayed here -->
+                        </div>
+                    </div>
+                    
+                    <div class="level-category">
+                        <h3>Advanced Levels (11-20)</h3>
+                        <div id="advanced-levels" class="level-grid">
+                            <!-- Advanced levels will be displayed here -->
+                        </div>
+                    </div>
+                    
+                    <div class="level-category">
+                        <h3>Master Levels (21-31)</h3>
+                        <div id="master-levels" class="level-grid">
+                            <!-- Master levels will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="back-to-home-from-levels-btn" class="btn secondary-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </button>
+            </section>
+
+            <!-- Profile Screen -->
+            <section id="profile-screen" class="screen">
+                <h2>Your Profile</h2>
+                <div class="profile-container">
+                    <div class="profile-info">
+                        <div class="profile-field">
+                            <label>Username:</label>
+                            <span id="profile-username">User</span>
+                        </div>
+                        <div class="profile-field">
+                            <label>Account Created:</label>
+                            <span id="profile-created">Date</span>
+                        </div>
+                        <div class="profile-field">
+                            <label>Total XP:</label>
+                            <span id="profile-xp">0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-languages">
+                        <h3>Your Languages</h3>
+                        <div id="profile-languages-list">
+                            <!-- User's languages will be displayed here -->
+                        </div>
+                    </div>
+                    
+                    <div class="profile-titles">
+                        <h3>Titles Earned</h3>
+                        <div id="profile-titles-list">
+                            <!-- User's titles will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Login/Register Screen -->
+            <section id="auth-screen" class="screen">
+                <div class="auth-container">
+                    <div class="auth-tabs">
+                        <button id="login-tab" class="auth-tab active">Login</button>
+                        <button id="register-tab" class="auth-tab">Register</button>
+                    </div>
+                    
+                    <div id="login-form" class="auth-form active">
+                        <div class="form-group">
+                            <label for="login-username">Username</label>
+                            <input type="text" id="login-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button id="login-btn" class="btn primary-btn">Login</button>
+                    </div>
+                    
+                    <div id="register-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="register-username">Username</label>
+                            <input type="text" id="register-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-confirm-password">Confirm Password</label>
+                            <input type="password" id="register-confirm-password" required>
+                        </div>
+                        <button id="register-btn" class="btn primary-btn">Register</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CodeLingo - Learn Programming Languages</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/languages.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/levels.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/themes.js"></script>
+    <script src="js/code-editor.js"></script>
+</body>
+</html>

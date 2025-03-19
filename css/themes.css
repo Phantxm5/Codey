@@ -1,0 +1,76 @@
+/* Theme Variables */
+.light-theme {
+  --bg-color: #f8f9fa;
+  --text-color: #343a40;
+  --card-bg: #ffffff;
+  --header-bg: #ffffff;
+  --footer-bg: #f8f9fa;
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme {
+  --bg-color: #343a40;
+  --text-color: #f8f9fa;
+  --card-bg: #495057;
+  --header-bg: #212529;
+  --footer-bg: #212529;
+  --border-color: #6c757d;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Apply Theme Colors */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--header-bg);
+}
+
+footer {
+  background-color: var(--footer-bg);
+}
+
+.logo h1 {
+  color: var(--primary-color);
+}
+
+nav ul li a {
+  color: var(--text-color);
+}
+
+nav ul li a.active {
+  color: var(--primary-color);
+}
+
+.language-card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+/* Theme Toggle Icon */
+.light-theme #theme-toggle i {
+  color: #343a40;
+}
+
+.dark-theme #theme-toggle i {
+  color: #f8f9fa;
+}
+
+.light-theme #theme-toggle i.fa-moon {
+  display: inline-block;
+}
+
+.light-theme #theme-toggle i.fa-sun {
+  display: none;
+}
+
+.dark-theme #theme-toggle i.fa-moon {
+  display: none;
+}
+
+.dark-theme #theme-toggle i.fa-sun {
+  display: inline-block;
+}
