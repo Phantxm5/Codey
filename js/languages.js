@@ -116,7 +116,7 @@ function loadAvailableLanguages() {
             languageCard.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                alert(`${language.name} will be available soon!`);
+                // Removed alert for better user experience
             });
         }
         
