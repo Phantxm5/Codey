@@ -119,9 +119,36 @@ function loadEnhancedLanguages() {
             return;
         }
         
+        // Check if language is disabled in the original availableLanguages array
+        const originalLanguage = availableLanguages.find(l => l.id === language.id);
+        const isDisabled = originalLanguage ? originalLanguage.disabled : false;
+        
         const languageCard = document.createElement('div');
         languageCard.className = `language-card language-${language.id}`;
         languageCard.dataset.language = language.id;
+        
+        // Add disabled class if language is disabled
+        if (isDisabled) {
+            languageCard.classList.add('disabled');
+            
+            // Create and add the Coming Soon label
+            const comingSoonLabel = document.createElement('div');
+            comingSoonLabel.className = 'coming-soon-label';
+            comingSoonLabel.textContent = 'Coming Soon';
+            comingSoonLabel.style.position = 'absolute';
+            comingSoonLabel.style.top = '10px';
+            comingSoonLabel.style.right = '10px';
+            comingSoonLabel.style.backgroundColor = '#ff3b30';
+            comingSoonLabel.style.color = 'white';
+            comingSoonLabel.style.padding = '5px 10px';
+            comingSoonLabel.style.borderRadius = '4px';
+            comingSoonLabel.style.fontWeight = 'bold';
+            comingSoonLabel.style.fontSize = '0.8rem';
+            comingSoonLabel.style.zIndex = '2';
+            comingSoonLabel.style.transform = 'rotate(5deg)';
+            comingSoonLabel.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
+            languageCard.appendChild(comingSoonLabel);
+        }
         
         const icon = document.createElement('div');
         icon.className = 'language-icon';
@@ -178,10 +205,18 @@ function loadEnhancedLanguages() {
         languageCard.appendChild(skillLevel);
         languageCard.appendChild(codePreview);
         
-        // Add event listener to select language
-        languageCard.addEventListener('click', function() {
-            selectLanguage(language);
-        });
+        // Add event listener to select language or show message for disabled languages
+        if (isDisabled) {
+            languageCard.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                alert(`${language.name} will be available soon!`);
+            });
+        } else {
+            languageCard.addEventListener('click', function() {
+                selectLanguage(language);
+            });
+        }
         
         languagesContainer.appendChild(languageCard);
     });
