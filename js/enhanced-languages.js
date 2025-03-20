@@ -132,7 +132,8 @@ function loadEnhancedLanguages() {
         
         // Check if language is disabled in the original availableLanguages array
         const originalLanguage = availableLanguages.find(l => l.id === language.id);
-        const isDisabled = originalLanguage ? originalLanguage.disabled : false;
+        // Make sure Python is always enabled
+        const isDisabled = language.id === 'python' ? false : (originalLanguage ? originalLanguage.disabled : false);
         
         const languageCard = document.createElement('div');
         languageCard.className = `language-card language-${language.id}`;
