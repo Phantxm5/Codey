@@ -108,6 +108,13 @@ function initEventListeners() {
         showScreen('home-screen');
     });
     
+    // My Languages link
+    document.getElementById('my-languages-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        showScreen('my-languages-screen');
+        loadMyLanguagesPage();
+    });
+    
     // Logo as home link
     document.getElementById('logo-home-link').addEventListener('click', function() {
         showScreen('home-screen');
