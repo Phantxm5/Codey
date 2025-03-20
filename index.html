@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/modern-levels.css">
     <link rel="stylesheet" href="css/modern-lessons.css">
     <link rel="stylesheet" href="css/modern-auth.css">
+    <link rel="stylesheet" href="css/modern-landing.css">
     <!-- Additional styles -->
     <link rel="stylesheet" href="css/enhanced-styles.css">
     <link rel="stylesheet" href="css/prism.css">
@@ -47,41 +48,216 @@
         <div class="container">
             <!-- Home Screen -->
             <section id="home-screen" class="screen active">
-                <div class="home-hero">
-                    <div class="code-snippet">function greeting() { return "Hello, World!"; }</div>
-                    <div class="code-snippet">def fibonacci(n): return n if n <= 1 else fibonacci(n-1) + fibonacci(n-2)</div>
-                    <h2>Welcome to Codey</h2>
-                    <p class="home-intro">Learn programming languages through an interactive, structured approach designed for beginners and experienced developers alike.</p>
-                    <div class="home-features">
-                        <div class="feature-card">
+                <div class="landing-hero">
+                    <h1 class="animate-fade-in">Learn to Code Like a Pro</h1>
+                    <p class="tagline animate-fade-in animate-delay-1">Master programming languages through an interactive, structured approach designed for beginners and experienced developers alike.</p>
+                    
+                    <div class="code-animation animate-fade-in animate-delay-2">
+                        <div class="code-snippet-container">
+                            <div class="code-snippet active">
+                                <span class="keyword">function</span> <span class="function">greeting</span>() {<br>
+                                &nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"Hello, World!"</span>;<br>
+                                }
+                            </div>
+                            <div class="code-snippet">
+                                <span class="keyword">def</span> <span class="function">fibonacci</span>(n):<br>
+                                &nbsp;&nbsp;<span class="keyword">if</span> n <= <span class="number">1</span>:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> n<br>
+                                &nbsp;&nbsp;<span class="keyword">else</span>:<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> fibonacci(n-<span class="number">1</span>) + fibonacci(n-<span class="number">2</span>)
+                            </div>
+                            <div class="code-snippet">
+                                <span class="keyword">class</span> <span class="function">Shape</span> {<br>
+                                &nbsp;&nbsp;<span class="function">constructor</span>(width, height) {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.width = width;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.height = height;<br>
+                                &nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;<span class="function">area</span>() {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="keyword">this</span>.width * <span class="keyword">this</span>.height;<br>
+                                &nbsp;&nbsp;}<br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <button id="get-started-btn" class="cta-primary">
+                            Get Started <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button id="learn-more-btn" class="cta-secondary">
+                            Learn More <i class="fas fa-info-circle"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="features-section">
+                    <div class="section-header">
+                        <h2>Why Choose Codey?</h2>
+                        <p>Our platform offers a unique approach to learning programming</p>
+                    </div>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card animate-fade-in">
                             <i class="fas fa-code"></i>
                             <h3>Multiple Languages</h3>
-                            <p>Learn HTML, CSS, JavaScript, Python, C/C++, and C# at your own pace</p>
+                            <p>Learn HTML, CSS, JavaScript, Python, C/C++, and C# at your own pace with structured lessons</p>
                         </div>
-                        <div class="feature-card">
+                        <div class="feature-card animate-fade-in animate-delay-1">
                             <i class="fas fa-layer-group"></i>
                             <h3>Structured Learning</h3>
-                            <p>Progress through beginner, advanced, and master levels with guided lessons</p>
+                            <p>Progress through beginner, advanced, and master levels with guided lessons and clear milestones</p>
                         </div>
-                        <div class="feature-card">
+                        <div class="feature-card animate-fade-in animate-delay-2">
                             <i class="fas fa-laptop-code"></i>
                             <h3>Coding Challenges</h3>
-                            <p>Test your skills with interactive coding challenges at milestone levels</p>
+                            <p>Test your skills with interactive coding challenges at milestone levels to reinforce your learning</p>
+                        </div>
+                        <div class="feature-card animate-fade-in animate-delay-3">
+                            <i class="fas fa-trophy"></i>
+                            <h3>Achievement System</h3>
+                            <p>Earn XP, unlock achievements, and collect titles as you progress through your learning journey</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="modern-section-header">
-                    <h2>Your Languages</h2>
+                <div class="languages-section">
+                    <div class="section-header">
+                        <h2>Languages We Offer</h2>
+                        <p>Start with one language and expand your skills over time</p>
+                    </div>
+                    
+                    <div class="languages-grid">
+                        <div class="language-preview available">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <h3>Python</h3>
+                            <p>Perfect for beginners</p>
+                        </div>
+                        <div class="language-preview">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                            <h3>HTML</h3>
+                            <p>Web development basics</p>
+                            <span class="coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="language-preview">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                            <h3>CSS</h3>
+                            <p>Style your websites</p>
+                            <span class="coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="language-preview">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            <h3>JavaScript</h3>
+                            <p>Interactive web pages</p>
+                            <span class="coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="language-preview">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                            <h3>C/C++</h3>
+                            <p>System programming</p>
+                            <span class="coming-soon">Coming Soon</span>
+                        </div>
+                        <div class="language-preview">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
+                            <h3>C#</h3>
+                            <p>Game development</p>
+                            <span class="coming-soon">Coming Soon</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div id="selected-languages" class="language-grid">
-                    <!-- Selected languages will be displayed here -->
+                <div class="how-it-works-section">
+                    <div class="section-header">
+                        <h2>How It Works</h2>
+                        <p>Our simple process to help you become a coding expert</p>
+                    </div>
+                    
+                    <div class="steps-container">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3><i class="fas fa-user-plus"></i> Create an Account</h3>
+                                <p>Sign up for free and create your profile to track your progress across different programming languages.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3><i class="fas fa-code"></i> Choose a Language</h3>
+                                <p>Select from our range of programming languages based on your interests or career goals.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3><i class="fas fa-graduation-cap"></i> Complete Lessons</h3>
+                                <p>Work through structured lessons at your own pace, with each lesson building on previous concepts.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3><i class="fas fa-trophy"></i> Earn Achievements</h3>
+                                <p>Gain XP, level up, and earn titles as you master each programming language.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <button id="add-language-btn">
-                    <i class="fas fa-plus"></i> Add New Language
-                </button>
+                <div class="testimonials-section">
+                    <div class="section-header">
+                        <h2>What Our Users Say</h2>
+                        <p>Join thousands of satisfied learners</p>
+                    </div>
+                    
+                    <div class="testimonials-container">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                "I tried several coding platforms before finding Codey. The structured approach and interactive challenges made learning Python so much easier and more enjoyable."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-author-avatar">S</div>
+                                <div class="testimonial-author-info">
+                                    <h4>Sarah K.</h4>
+                                    <p>Web Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                "As someone with no prior programming experience, I was intimidated at first. Codey broke everything down into manageable lessons that built my confidence step by step."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-author-avatar">M</div>
+                                <div class="testimonial-author-info">
+                                    <h4>Michael T.</h4>
+                                    <p>Student</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                "The gamification elements kept me motivated. Earning XP and unlocking achievements made the learning process addictive in the best possible way."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-author-avatar">J</div>
+                                <div class="testimonial-author-info">
+                                    <h4>Jessica R.</h4>
+                                    <p>Data Analyst</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-section">
+                    <div class="cta-container">
+                        <h2>Ready to Start Your Coding Journey?</h2>
+                        <p>Join Codey today and take the first step toward mastering programming languages.</p>
+                        <button id="join-now-btn" class="cta-primary">
+                            Join Now <i class="fas fa-rocket"></i>
+                        </button>
+                    </div>
+                </div>
             </section>
 
             <!-- Language Selection Screen -->
