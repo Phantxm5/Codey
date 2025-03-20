@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/modern-home.css">
     <link rel="stylesheet" href="css/modern-profile.css">
     <link rel="stylesheet" href="css/modern-levels.css">
+    <link rel="stylesheet" href="css/modern-lessons.css">
     <!-- Additional styles -->
     <link rel="stylesheet" href="css/enhanced-styles.css">
     <link rel="stylesheet" href="css/prism.css">
@@ -96,7 +97,7 @@
             <!-- Learning Screen -->
             <section id="learning-screen" class="screen">
                 <div class="learning-header">
-                    <h2 id="current-language">Language</h2>
+                    <h2 id="current-language"><i class="fas fa-code"></i> <span>Language</span></h2>
                     <div class="progress-container">
                         <div class="progress-bar">
                             <div id="xp-progress" class="progress"></div>
@@ -110,27 +111,38 @@
                 
                 <div id="lesson-content" class="lesson-container">
                     <!-- Lesson content will be displayed here -->
+                    <div class="lesson-title">Introduction to Programming</div>
+                    <div class="lesson-content">
+                        <p>Welcome to your first lesson! This content will be dynamically loaded based on your current level and language.</p>
+                        
+                        <div class="lesson-tips">
+                            <h4>Pro Tip</h4>
+                            <p>Take your time to understand each concept before moving on to the next lesson.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div id="coding-challenge" class="coding-challenge-container">
                     <h3>Coding Challenge</h3>
                     <div class="challenge-description">
                         <!-- Challenge description will be displayed here -->
+                        <p>Complete the following challenge to test your understanding of the concepts covered in this lesson.</p>
                     </div>
                     <div class="code-editor-container">
-                        <textarea id="code-editor" class="code-editor"></textarea>
+                        <textarea id="code-editor" class="code-editor">// Write your code here</textarea>
                     </div>
-                    <button id="run-code-btn" class="btn primary-btn">Run Code</button>
+                    <button id="run-code-btn">Run Code</button>
                     <div id="code-output" class="code-output">
                         <!-- Code output will be displayed here -->
+                        <p>Output will appear here after running your code.</p>
                     </div>
                 </div>
                 
                 <div class="lesson-navigation">
-                    <button id="back-to-levels-btn" class="btn secondary-btn">
+                    <button id="back-to-levels-btn">
                         <i class="fas fa-arrow-left"></i> Back to Levels
                     </button>
-                    <button id="complete-lesson-btn" class="btn primary-btn">
+                    <button id="complete-lesson-btn">
                         Complete <i class="fas fa-check"></i>
                     </button>
                 </div>
