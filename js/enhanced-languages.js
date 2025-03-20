@@ -112,7 +112,18 @@ function loadEnhancedLanguages() {
     
     languagesContainer.innerHTML = '';
     
-    enhancedLanguages.forEach(language => {
+    // Create a sorted copy of enhancedLanguages with available languages first
+    const sortedLanguages = [...enhancedLanguages].sort((a, b) => {
+        const aLanguage = availableLanguages.find(l => l.id === a.id);
+        const bLanguage = availableLanguages.find(l => l.id === b.id);
+        const aDisabled = aLanguage ? aLanguage.disabled : true;
+        const bDisabled = bLanguage ? bLanguage.disabled : true;
+        
+        // Sort by disabled status (available first)
+        return aDisabled === bDisabled ? 0 : aDisabled ? 1 : -1;
+    });
+    
+    sortedLanguages.forEach(language => {
         // Skip languages the user already has
         if (currentUser && currentUser.languages && 
             currentUser.languages.some(l => l.id === language.id)) {
