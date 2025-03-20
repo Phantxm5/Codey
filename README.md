@@ -4,7 +4,7 @@
 Codey is an interactive web application designed to help users learn programming languages through a structured, gamified approach similar to language learning platforms like Duolingo. The application offers multiple programming languages, a comprehensive level system, and interactive coding challenges.
 
 ## Live Demo
-The application is deployed and accessible at: https://zgbrpvgj.manus.space
+The application is deployed and accessible at: https://phantxm5.github.io/Codey/
 
 ## Features
 
