@@ -73,20 +73,18 @@ const enhancedLanguages = [
 
 // Initialize enhanced language features
 function initEnhancedLanguages() {
-    // Add event listener for the Add Language button
-    const addLanguageBtn = document.getElementById('add-language-btn');
-    if (addLanguageBtn) {
-        addLanguageBtn.addEventListener('click', function() {
-            showScreen('language-selection-screen');
-            loadEnhancedLanguages();
-        });
-    }
+    // Remove the conflicting event listener for the Add Language button
+    // Let app.js handle the click event and use loadAvailableLanguages
     
     // Load user languages with enhanced styling
     loadEnhancedUserLanguages();
     
     // Add hero section code snippets
     addCodeSnippetsToHero();
+    
+    // Override the loadAvailableLanguages function to use our enhanced version
+    window.originalLoadAvailableLanguages = window.loadAvailableLanguages;
+    window.loadAvailableLanguages = loadEnhancedLanguages;
 }
 
 // Add code snippets to hero section
