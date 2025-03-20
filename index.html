@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/modern-lessons.css">
     <link rel="stylesheet" href="css/modern-auth.css">
     <link rel="stylesheet" href="css/modern-landing.css">
+    <link rel="stylesheet" href="css/modern-my-languages.css">
     <!-- Additional styles -->
     <link rel="stylesheet" href="css/enhanced-styles.css">
     <link rel="stylesheet" href="css/prism.css">
@@ -259,6 +260,29 @@
                     </div>
                 </div>
             </section>
+            
+            <!-- My Languages Screen -->
+            <section id="my-languages-screen" class="screen">
+                <div class="my-languages-header">
+                    <h2>My Languages</h2>
+                    <button id="add-language-btn-my-languages" class="add-language-button">
+                        <i class="fas fa-plus"></i> Add New Language
+                    </button>
+                </div>
+                
+                <div id="my-languages-grid" class="my-languages-grid">
+                    <!-- User's languages will be displayed here -->
+                </div>
+                
+                <div id="empty-languages-state" class="empty-languages-state">
+                    <i class="fas fa-code"></i>
+                    <h3>No Languages Added Yet</h3>
+                    <p>Start your coding journey by adding a programming language to learn. Choose from our selection of languages and begin mastering new skills today.</p>
+                    <button id="add-first-language-btn">
+                        <i class="fas fa-plus"></i> Add Your First Language
+                    </button>
+                </div>
+            </section>
 
             <!-- Language Selection Screen -->
             <section id="language-selection-screen" class="screen">
@@ -498,6 +522,7 @@
     <script src="js/python-lessons.js"></script>
     <script src="js/levels.js"></script>
     <script src="js/profile.js"></script>
+    <script src="js/my-languages.js"></script>
     <script src="js/themes.js"></script>
     <script src="js/code-editor.js"></script>
 </body>

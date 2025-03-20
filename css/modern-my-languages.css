@@ -1,0 +1,271 @@
+/* Modern My Languages Page Styles */
+
+/* Languages Header */
+.my-languages-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.my-languages-header h2 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--text-color);
+  position: relative;
+  display: inline-block;
+}
+
+.my-languages-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--radius-full);
+}
+
+/* Languages Grid */
+.my-languages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+/* Language Card */
+.language-card {
+  background-color: var(--surface-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.language-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.language-card-header {
+  padding: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+  background-color: rgba(var(--primary-rgb), 0.05);
+}
+
+.language-card-header img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.language-card-header h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--text-color);
+  margin: 0;
+}
+
+.language-card-body {
+  padding: var(--space-6);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.language-card-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.language-card-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.language-card-stat-value {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-color);
+  margin-bottom: var(--space-1);
+}
+
+.language-card-stat-label {
+  font-size: var(--text-xs);
+  color: var(--text-color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.language-card-progress {
+  margin-bottom: var(--space-4);
+}
+
+.language-card-progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.language-card-progress-label span:first-child {
+  color: var(--text-color);
+  font-weight: var(--font-medium);
+}
+
+.language-card-progress-label span:last-child {
+  color: var(--text-color-secondary);
+}
+
+.language-card-progress-bar {
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.language-card-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--radius-full);
+  width: var(--progress, 0%);
+  transition: width 0.5s ease;
+}
+
+.language-card-footer {
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language-card-footer-status {
+  font-size: var(--text-sm);
+  color: var(--text-color-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.language-card-footer-status i {
+  color: var(--success);
+}
+
+.language-card-footer-action {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: all var(--transition-normal);
+  font-size: var(--text-sm);
+}
+
+.language-card-footer-action:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Empty State */
+.empty-languages-state {
+  text-align: center;
+  padding: var(--space-12);
+  background-color: var(--surface-color);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-color);
+  margin: var(--space-8) 0;
+}
+
+.empty-languages-state i {
+  font-size: var(--text-5xl);
+  color: var(--text-color-secondary);
+  margin-bottom: var(--space-6);
+  opacity: 0.5;
+}
+
+.empty-languages-state h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--text-color);
+  margin-bottom: var(--space-4);
+}
+
+.empty-languages-state p {
+  color: var(--text-color-secondary);
+  margin-bottom: var(--space-8);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.empty-languages-state button {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: all var(--transition-normal);
+}
+
+.empty-languages-state button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Add Language Button */
+.add-language-button {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: all var(--transition-normal);
+  margin-top: var(--space-8);
+  align-self: center;
+}
+
+.add-language-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .my-languages-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .my-languages-grid {
+    grid-template-columns: 1fr;
+  }
+}

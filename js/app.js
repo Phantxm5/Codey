@@ -126,8 +126,20 @@ function initEventListeners() {
         }
     });
     
-    // Add language button
+    // Add language button on home screen
     document.getElementById('add-language-btn').addEventListener('click', function() {
+        showScreen('language-selection-screen');
+        loadAvailableLanguages();
+    });
+    
+    // Add language button on My Languages screen
+    document.getElementById('add-language-btn-my-languages').addEventListener('click', function() {
+        showScreen('language-selection-screen');
+        loadAvailableLanguages();
+    });
+    
+    // Add first language button in empty state
+    document.getElementById('add-first-language-btn').addEventListener('click', function() {
         showScreen('language-selection-screen');
         loadAvailableLanguages();
     });
@@ -190,18 +202,24 @@ function showScreen(screenId) {
 function loadUserLanguages() {
     if (!currentUser || !currentUser.languages) return;
     
+    // Update My Languages page
+    loadMyLanguagesPage();
+    
+    // For backward compatibility, also update the home screen languages section
     const languagesContainer = document.getElementById('selected-languages');
-    languagesContainer.innerHTML = '';
-    
-    if (currentUser.languages.length === 0) {
-        languagesContainer.innerHTML = '<p>You haven\'t selected any languages yet. Click "Add New Language" to get started.</p>';
-        return;
+    if (languagesContainer) {
+        languagesContainer.innerHTML = '';
+        
+        if (currentUser.languages.length === 0) {
+            languagesContainer.innerHTML = '<p>You haven\'t selected any languages yet. Click "Add New Language" to get started.</p>';
+            return;
+        }
+        
+        currentUser.languages.forEach(language => {
+            const languageCard = createLanguageCard(language);
+            languagesContainer.appendChild(languageCard);
+        });
     }
-    
-    currentUser.languages.forEach(language => {
-        const languageCard = createLanguageCard(language);
-        languagesContainer.appendChild(languageCard);
-    });
 }
 
 // Create a language card element
