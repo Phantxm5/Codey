@@ -11,6 +11,7 @@
     <!-- Modern design system -->
     <link rel="stylesheet" href="css/modern-design-system.css">
     <link rel="stylesheet" href="css/modern-home.css">
+    <link rel="stylesheet" href="css/modern-profile.css">
     <!-- Additional styles -->
     <link rel="stylesheet" href="css/enhanced-styles.css">
     <link rel="stylesheet" href="css/prism.css">
@@ -179,12 +180,17 @@
 
             <!-- Profile Screen -->
             <section id="profile-screen" class="screen">
-                <button id="back-to-home-from-profile-btn" class="btn secondary-btn back-to-home-btn">
+                <button id="back-to-home-from-profile-btn" class="back-to-home-btn">
                     <i class="fas fa-arrow-left"></i> Back to Home
                 </button>
-                <h2>Your Profile</h2>
+                
+                <div class="profile-header">
+                    <h2>Your Profile</h2>
+                </div>
+                
                 <div class="profile-container">
                     <div class="profile-info">
+                        <div class="profile-avatar" id="profile-avatar"></div>
                         <div class="profile-field">
                             <label>Username:</label>
                             <span id="profile-username">User</span>
@@ -197,26 +203,28 @@
                             <label>Total XP:</label>
                             <span id="profile-xp">0</span>
                         </div>
-                    </div>
-                    
-                    <div class="profile-languages">
-                        <h3>Your Languages</h3>
-                        <div id="profile-languages-list">
-                            <!-- User's languages will be displayed here -->
+                        
+                        <div class="profile-actions">
+                            <button id="logout-btn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
                         </div>
                     </div>
                     
-                    <div class="profile-titles">
-                        <h3>Titles Earned</h3>
-                        <div id="profile-titles-list">
-                            <!-- User's titles will be displayed here -->
+                    <div>
+                        <div class="profile-languages">
+                            <h3>Your Languages</h3>
+                            <div id="profile-languages-list">
+                                <!-- User's languages will be displayed here -->
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="profile-actions">
-                        <button id="logout-btn" class="btn danger-btn">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </button>
+                        
+                        <div class="profile-titles">
+                            <h3>Titles Earned</h3>
+                            <div id="profile-titles-list">
+                                <!-- User's titles will be displayed here -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
