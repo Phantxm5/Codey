@@ -173,10 +173,7 @@ function selectLanguage(language) {
         // Update user in local storage
         updateCurrentUser();
         
-        // Show success message
-        alert(`${language.name} has been added to your languages!`);
-        
-        // Redirect to home screen
+        // Redirect to home screen without showing alert
         showScreen('home-screen');
         loadUserLanguages();
     }
