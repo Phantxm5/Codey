@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Codey - Learn Programming Languages</title>
+    <!-- Base styles -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/components.css">
+    <!-- Modern design system -->
+    <link rel="stylesheet" href="css/modern-design-system.css">
+    <link rel="stylesheet" href="css/modern-home.css">
+    <!-- Additional styles -->
     <link rel="stylesheet" href="css/enhanced-styles.css">
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/disabled-languages.css">
@@ -39,6 +44,8 @@
             <!-- Home Screen -->
             <section id="home-screen" class="screen active">
                 <div class="home-hero">
+                    <div class="code-snippet">function greeting() { return "Hello, World!"; }</div>
+                    <div class="code-snippet">def fibonacci(n): return n if n <= 1 else fibonacci(n-1) + fibonacci(n-2)</div>
                     <h2>Welcome to Codey</h2>
                     <p class="home-intro">Learn programming languages through an interactive, structured approach designed for beginners and experienced developers alike.</p>
                     <div class="home-features">
@@ -59,11 +66,16 @@
                         </div>
                     </div>
                 </div>
-                <h2>Your Languages</h2>
+                
+                <div class="modern-section-header">
+                    <h2>Your Languages</h2>
+                </div>
+                
                 <div id="selected-languages" class="language-grid">
                     <!-- Selected languages will be displayed here -->
                 </div>
-                <button id="add-language-btn" class="btn primary-btn">
+                
+                <button id="add-language-btn">
                     <i class="fas fa-plus"></i> Add New Language
                 </button>
             </section>
