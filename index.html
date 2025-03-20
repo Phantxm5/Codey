@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/modern-auth.css">
     <link rel="stylesheet" href="css/modern-landing.css">
     <link rel="stylesheet" href="css/modern-my-languages.css">
+    <link rel="stylesheet" href="css/modern-roadmap.css">
     <!-- Additional styles -->
     <link rel="stylesheet" href="css/enhanced-styles.css">
     <link rel="stylesheet" href="css/prism.css">
@@ -354,45 +355,209 @@
             <section id="levels-screen" class="screen">
                 <div class="levels-header">
                     <h2 id="levels-language">Language</h2>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div id="levels-xp-progress" class="progress"></div>
+                    <div class="roadmap-progress">
+                        <div class="roadmap-progress-stats">
+                            <span>Your Progress</span>
+                            <span><span id="levels-current-xp">0</span> XP • Level <span id="levels-current-level">1</span></span>
                         </div>
-                        <div class="progress-info">
-                            <span id="levels-current-xp">0</span> XP
-                            <span>Level <span id="levels-current-level">1</span></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="levels-container">
-                    <div class="level-category">
-                        <h3>Beginner Levels (1-10)</h3>
-                        <div class="level-path" style="--progress-width: 30%"></div>
-                        <div id="beginner-levels" class="level-grid">
-                            <!-- Beginner levels will be displayed here -->
-                        </div>
-                    </div>
-                    
-                    <div class="level-category">
-                        <h3>Advanced Levels (11-20)</h3>
-                        <div class="level-path" style="--progress-width: 0%"></div>
-                        <div id="advanced-levels" class="level-grid">
-                            <!-- Advanced levels will be displayed here -->
-                        </div>
-                    </div>
-                    
-                    <div class="level-category">
-                        <h3>Master Levels (21-31)</h3>
-                        <div class="level-path" style="--progress-width: 0%"></div>
-                        <div id="master-levels" class="level-grid">
-                            <!-- Master levels will be displayed here -->
+                        <div class="roadmap-progress-bar">
+                            <div id="levels-xp-progress" class="roadmap-progress-fill" style="--progress: 0%"></div>
                         </div>
                     </div>
                 </div>
                 
-                <button id="back-to-home-from-levels-btn">
-                    <i class="fas fa-arrow-left"></i> Back to Home
+                <div class="roadmap-container">
+                    <div class="roadmap-path"></div>
+                    
+                    <!-- Beginner Tier -->
+                    <div class="level-group">
+                        <div class="level-group-header">
+                            <div class="level-group-title">Beginner Tier</div>
+                        </div>
+                        
+                        <div id="beginner-levels" class="level-items">
+                            <!-- Level 1 -->
+                            <div class="level-item">
+                                <div class="level-number">1</div>
+                                <div class="level-content">
+                                    <span class="level-status current">Current</span>
+                                    <div class="level-title"><i class="fas fa-code"></i> Introduction to Python</div>
+                                    <div class="level-description">Learn the basics of Python programming and write your first lines of code.</div>
+                                    <span class="level-xp">10 XP</span>
+                                    <div class="level-buttons">
+                                        <button class="level-button primary">Start <i class="fas fa-play"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 2 -->
+                            <div class="level-item">
+                                <div class="level-number">2</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-calculator"></i> Variables & Data Types</div>
+                                    <div class="level-description">Learn about variables, strings, integers, and other data types in Python.</div>
+                                    <span class="level-xp">15 XP</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 3 -->
+                            <div class="level-item">
+                                <div class="level-number">3</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-plus-minus"></i> Basic Operations</div>
+                                    <div class="level-description">Perform mathematical operations and string manipulations in Python.</div>
+                                    <span class="level-xp">15 XP</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 4 -->
+                            <div class="level-item">
+                                <div class="level-number">4</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-code-branch"></i> Conditional Statements</div>
+                                    <div class="level-description">Learn about if, elif, and else statements to control program flow.</div>
+                                    <span class="level-xp">20 XP</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 5 -->
+                            <div class="level-item">
+                                <div class="level-number">5</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-redo"></i> Loops in Python</div>
+                                    <div class="level-description">Use for and while loops to repeat code execution efficiently.</div>
+                                    <span class="level-xp">20 XP</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 6 -->
+                            <div class="level-item">
+                                <div class="level-number">6</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-list"></i> Lists and Arrays</div>
+                                    <div class="level-description">Work with collections of data using Python lists.</div>
+                                    <span class="level-xp">25 XP</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 7 -->
+                            <div class="level-item">
+                                <div class="level-number">7</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-key"></i> Dictionaries</div>
+                                    <div class="level-description">Store and retrieve data using key-value pairs in Python dictionaries.</div>
+                                    <span class="level-xp">25 XP</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 8 -->
+                            <div class="level-item">
+                                <div class="level-number">8</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-cube"></i> Functions</div>
+                                    <div class="level-description">Create reusable blocks of code with functions in Python.</div>
+                                    <span class="level-xp">30 XP</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 9 -->
+                            <div class="level-item">
+                                <div class="level-number">9</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-file-import"></i> Modules and Imports</div>
+                                    <div class="level-description">Use Python's built-in modules and import external libraries.</div>
+                                    <span class="level-xp">30 XP</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Level 10 - Milestone -->
+                            <div class="level-item milestone">
+                                <div class="level-number">10</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-trophy"></i> Beginner Challenge</div>
+                                    <div class="level-description">Complete a coding challenge that tests all the beginner concepts you've learned.</div>
+                                    <span class="level-xp">50 XP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Advanced Tier -->
+                    <div class="level-group">
+                        <div class="level-group-header">
+                            <div class="level-group-title">Advanced Tier</div>
+                        </div>
+                        
+                        <div id="advanced-levels" class="level-items">
+                            <!-- Level 11 -->
+                            <div class="level-item">
+                                <div class="level-number">11</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-bug"></i> Error Handling</div>
+                                    <div class="level-description">Learn to handle exceptions and errors in your Python programs.</div>
+                                    <span class="level-xp">35 XP</span>
+                                </div>
+                            </div>
+                            
+                            <!-- More advanced levels would go here -->
+                            <!-- Level 20 - Milestone -->
+                            <div class="level-item milestone">
+                                <div class="level-number">20</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-trophy"></i> Advanced Challenge</div>
+                                    <div class="level-description">Complete a complex coding challenge that tests all the advanced concepts you've learned.</div>
+                                    <span class="level-xp">100 XP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Master Tier -->
+                    <div class="level-group">
+                        <div class="level-group-header">
+                            <div class="level-group-title">Master Tier</div>
+                        </div>
+                        
+                        <div id="master-levels" class="level-items">
+                            <!-- Level 21 -->
+                            <div class="level-item">
+                                <div class="level-number">21</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-database"></i> Database Integration</div>
+                                    <div class="level-description">Connect Python applications to databases using SQLite and other database systems.</div>
+                                    <span class="level-xp">50 XP</span>
+                                </div>
+                            </div>
+                            
+                            <!-- More master levels would go here -->
+                            <!-- Level 30 - Milestone -->
+                            <div class="level-item milestone">
+                                <div class="level-number">30</div>
+                                <div class="level-content">
+                                    <span class="level-status locked">Locked</span>
+                                    <div class="level-title"><i class="fas fa-crown"></i> Master Challenge</div>
+                                    <div class="level-description">Complete a professional-level project that demonstrates mastery of Python programming.</div>
+                                    <span class="level-xp">200 XP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="back-to-home-from-levels-btn" class="level-button secondary" style="margin: 20px 0;">
+                    <i class="fas fa-arrow-left"></i> Back to My Languages
                 </button>
             </section>
 
