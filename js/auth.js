@@ -166,5 +166,8 @@ function logout() {
         languagesContainer.innerHTML = '<p>You haven\'t selected any languages yet. Click "Add New Language" to get started.</p>';
     }
     
+    // Update navigation for guest user
+    updateNavigation(true);
+    
     showScreen('auth-screen');
 }
